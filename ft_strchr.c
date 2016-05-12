@@ -6,7 +6,7 @@
 /*   By: gjacot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/03 11:35:34 by gjacot            #+#    #+#             */
-/*   Updated: 2015/12/03 11:35:41 by gjacot           ###   ########.fr       */
+/*   Updated: 2016/05/12 17:30:44 by gjacot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strchr(const char *s, int c)
 
 	b = (char *)s;
 	a = 0;
+	if (!s)
+		return (NULL);
 	while (b[a] != c && b[a] != '\0')
 		a++;
 	if (b[a] == c)
