@@ -6,13 +6,14 @@
 /*   By: gjacot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 10:50:50 by gjacot            #+#    #+#             */
-/*   Updated: 2015/12/22 16:38:44 by gjacot           ###   ########.fr       */
+/*   Updated: 2016/06/01 15:40:59 by gjacot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <string.h>
+# include "get_next_line.h"
 
 typedef struct		s_list
 {
@@ -20,6 +21,7 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
 t_list				*ft_lstlast(t_list *list);
 int					ft_lstn(t_list *list);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));

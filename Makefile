@@ -7,7 +7,7 @@
 #    By: gjacot <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/27 16:00:24 by gjacot            #+#    #+#              #
-#    Updated: 2015/12/22 16:39:51 by gjacot           ###   ########.fr        #
+#    Updated: 2016/06/01 15:40:24 by gjacot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,6 +73,7 @@ SRC = ./ft_putchar.c	\
 	./ft_lstmap.c	\
 	./ft_lstlast.c	\
 	./ft_lstn.c	\
+	./get_next_line.c \
 
 OBJ = ./ft_putchar.o    \
 	./ft_putstr.o   \
@@ -134,6 +135,7 @@ OBJ = ./ft_putchar.o    \
 	./ft_lstmap.o	\
 	./ft_lstlast.o	\
 	./ft_lstn.o	\
+	./get_next_line.o \
 
 HEAD = -I *.h
 
