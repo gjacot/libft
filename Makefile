@@ -1,154 +1,61 @@
-
-# **************************************************************************** #
+#******************************************************************************#
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: gjacot <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2015/11/27 16:00:24 by gjacot            #+#    #+#              #
-#    Updated: 2016/06/01 15:40:24 by gjacot           ###   ########.fr        #
+#    Created: 2016/10/11 17:04:53 by gjacot            #+#    #+#              #
+#    Updated: 2016/10/11 17:17:33 by gjacot           ###   ########.fr        #
 #                                                                              #
-# **************************************************************************** #
+#******************************************************************************#
 
-NAME = libft.a
+NAME		=	fdf
+DIRSRC		=	./src/
+DIROBJ		=	./obj/
+SRC			=	./fdf.c \
+				./ft_event.c \
+				./ft_func.c \
+				./ft_ligne.c \
+				./ft_main.c	\
+				./ft_point.c \
+				./ft_strsplit_fdf.c \
 
-SRC = ./ft_putchar.c	\
-	./ft_putstr.c	\
-	./ft_strcpy.c	\
-	./ft_strlen.c	\
-	./ft_isalnum.c	\
-	./ft_isalpha.c	\
-	./ft_isascii.c	\
-	./ft_isdigit.c	\
-	./ft_isprint.c	\
-	./ft_strclr.c	\
-	./ft_strcmp.c	\
-	./ft_strequ.c	\
-	./ft_striter.c	\
-	./ft_strncmp.c	\
-	./ft_strnequ.c	\
-	./ft_strstr.c	\
-	./ft_itoa.c	\
-	./ft_atoi.c	\
-	./ft_toupper.c	\
-	./ft_tolower.c	\
-	./ft_strcat.c	\
-	./ft_strncat.c	\
-	./ft_strlcat.c	\
-	./ft_strchr.c	\
-	./ft_strnstr.c	\
-	./ft_memalloc.c	\
-	./ft_memdel.c	\
-	./ft_memset.c	\
-	./ft_bzero.c	\
-	./ft_memcpy.c	\
-	./ft_strncpy.c	\
-	./ft_memccpy.c	\
-	./ft_memmove.c	\
-	./ft_memchr.c	\
-	./ft_memcmp.c	\
-	./ft_strnew.c	\
-	./ft_strdup.c	\
-	./ft_putnbr.c	\
-	./ft_strrchr.c	\
-	./ft_strdel.c	\
-	./ft_striteri.c	\
-	./ft_strmap.c	\
-	./ft_strmapi.c	\
-	./ft_strsub.c	\
-	./ft_strjoin.c	\
-	./ft_strtrim.c	\
-	./ft_putendl.c	\
-	./ft_strsplit.c	\
-	./ft_putchar_fd.c	\
-	./ft_putstr_fd.c	\
-	./ft_putendl_fd.c	\
-	./ft_putnbr_fd.c	\
-	./ft_lstnew.c	\
-	./ft_lstdelone.c	\
-	./ft_lstdel.c	\
-	./ft_lstadd.c	\
-	./ft_lstiter.c	\
-	./ft_lstmap.c	\
-	./ft_lstlast.c	\
-	./ft_lstn.c	\
-	./get_next_line.c \
+OBJ			=	$(SRC:.c=.o)
+OBJS		=	$(OBJ:%=$(DIROBJ)%)
 
-OBJ = ./ft_putchar.o    \
-	./ft_putstr.o   \
-	./ft_strcpy.o   \
-	./ft_strlen.o   \
-	./ft_isalnum.o	\
-	./ft_isalpha.o	\
-	./ft_isascii.o	\
-	./ft_isdigit.o	\
-	./ft_isprint.o	\
-	./ft_strclr.o	\
-	./ft_strcmp.o	\
-	./ft_strequ.o	\
-	./ft_striter.o	\
-	./ft_strncmp.o	\
-	./ft_strnequ.o	\
-	./ft_strstr.o	\
-	./ft_itoa.o	\
-	./ft_atoi.o	\
-	./ft_toupper.o	\
-	./ft_tolower.o	\
-	./ft_strcat.o	\
-	./ft_strncat.o	\
-	./ft_strlcat.o	\
-	./ft_strchr.o	\
-	./ft_strnstr.o	\
-	./ft_memalloc.o	\
-	./ft_memdel.o	\
-	./ft_memset.o	\
-	./ft_bzero.o	\
-	./ft_memcpy.o	\
-	./ft_strncpy.o	\
-	./ft_memccpy.o	\
-	./ft_memmove.o	\
-	./ft_memchr.o	\
-	./ft_memcmp.o	\
-	./ft_strnew.o	\
-	./ft_strdup.o	\
-	./ft_putnbr.o	\
-	./ft_strrchr.o	\
-	./ft_strdel.o	\
-	./ft_striteri.o	\
-	./ft_strmap.o	\
-	./ft_strmapi.o	\
-	./ft_strsub.o	\
-	./ft_strjoin.o	\
-	./ft_strtrim.o	\
-	./ft_putendl.o	\
-	./ft_strsplit.o	\
-	./ft_putchar_fd.o	\
-	./ft_putstr_fd.o	\
-	./ft_putendl_fd.o	\
-	./ft_putnbr_fd.o	\
-	./ft_lstnew.o	\
-	./ft_lstdelone.o	\
-	./ft_lstdel.o	\
-	./ft_lstadd.o	\
-	./ft_lstiter.o	\
-	./ft_lstmap.o	\
-	./ft_lstlast.o	\
-	./ft_lstn.o	\
-	./get_next_line.o \
+CFLAGS		=	-Wall -Wextra -Werror -I./
 
-HEAD = -I *.h
+LIBFT		= 	./libft/libft.a
 
-all: $(NAME)
+CC			=	/usr/bin/gcc
+RM			=	/bin/rm -f
+ECHO		=	/bin/echo -e
 
-$(NAME):
-	gcc -Wall -Wextra -Werror $(HEAD) -c $(SRC)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
-clean:
-	rm -f $(OBJ)
 
-fclean: clean
-	rm -f $(NAME)
+$(NAME)	:		$(OBJ)
+				$(CC) $(CFLAGS) -lmlx -framework OpenGL -framework AppKit $(LIBFT) -o $(NAME) $(OBJS)
+				@$(ECHO) '> Compiled'
 
-re: fclean all
+clean	:
+				@(cd $(DIROBJ) && $(RM) $(OBJ))
+ifdef SUB_MAKE
+				@(cd $(SUB_MAKE) && $(MAKE) clean)
+endif
+				@$(ECHO) '> Directory cleaned'
+
+all		:		$(NAME)
+
+fclean	:		clean
+ifdef SUB_MAKE
+				@(cd $(SUB_MAKE) && $(MAKE) fclean)
+endif
+				-@$(RM) $(NAME)
+				@$(ECHO) '> Remove executable'
+
+re		:		fclean all
+
+.PHONY	:		all clean re
+
+%.o		:		$(DIRSRC)/%.c
+				$(CC) $(INCLUDE) $(CFLAGS) -o $(DIROBJ)/$@ -c $<
